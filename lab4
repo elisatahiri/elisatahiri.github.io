@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Store</title>
+  <script>
+    window.onload = function() {
+      alert("Welcome to my store!");
+
+      let name = prompt("What is your name?");
+      let item = prompt("What would you like to order?");
+      let number = prompt("How many would you like to order? (1-99)");
+
+      let today = new Date();
+      let hour = today.getHours();
+      let greeting = "";
+
+      if (hour < 12) {
+        greeting = "Good Morning";
+      } else if (hour < 18) {
+        greeting = "Good Afternoon";
+      } else {
+        greeting = "Good Evening";
+      }
+
+      let arrival = new Date();
+      arrival.setDate(today.getDate() + 7);
+
+      document.write("<h2>" + greeting + " " + name + ", thank you for ordering!</h2>");
+      document.write("<p>You ordered " + number + " " + item + "(s).</p>");
+      document.write("<p>Your order will arrive on: " + arrival.toDateString() + "</p>");
+    }
+  </script>
+</head>
+<body>
+  <h1>Welcome to My Store</h1>
+</body>
+</html>
