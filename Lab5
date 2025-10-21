@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Register</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="p-5 bg-light text-center">
+<h3>Register Product</h3>
+<form id="f" class="m-auto" style="max-width:400px">
+<input class="form-control mb-2" id="fn" placeholder="First Name">
+<input class="form-control mb-2" id="ln" placeholder="Last Name">
+<input class="form-control mb-2" id="em" placeholder="Email">
+<input class="form-control mb-2" id="pw" type="password" placeholder="Password">
+<input class="form-control mb-2" id="dob" type="date">
+<button class="btn btn-primary w-100">Submit</button>
+</form>
+<div id="r" class="mt-3"></div>
+<script>
+f.onsubmit=e=>{
+e.preventDefault()
+let a=fn.value.trim(),b=ln.value.trim(),c=em.value.trim(),d=pw.value.trim(),g=dob.value
+if(!a||!b||!c||!d||!g)return r.innerHTML='<div class="text-danger">All fields required</div>'
+if(!d.includes('!')&&!d.includes('?'))return r.innerHTML='<div class="text-danger">Password must have ! or ?</div>'
+r.innerHTML=`<div class='text-success'>Registration Successful!</div>
+<p>${a} ${b}<br>${c}<br>${'*'.repeat(d.length)}<br>${g}</p>`
+}
+</script>
+</body>
+</html>
